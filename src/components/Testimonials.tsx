@@ -362,12 +362,11 @@ export default function Testimonials() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { src: "/clinic_interior.png", alt: "Warm clinic lobby" },
-              { src: "/service_wellness.png", alt: "Patient checkup" },
-              { src: "/hero_dog.png", alt: "Healthy happy dog" },
-              { src: "/service_surgery.png", alt: "Sterile surgery room" }
+              { src: "/realimgs/lifeatroyal/WhatsApp Image 2026-06-05 at 11.42.34 AM.jpeg", alt: "Caring for our patients" },
+              { src: "/realimgs/lifeatroyal/WhatsApp Image 2026-06-05 at 11.42.35 AM.jpeg", alt: "Our medical facility" },
+              { src: "/realimgs/lifeatroyal/WhatsApp Image 2026-06-05 at 11.42.40 AM.jpeg", alt: "Happy healthy companion" }
             ].map((img, i) => (
               <motion.div
                 key={i}

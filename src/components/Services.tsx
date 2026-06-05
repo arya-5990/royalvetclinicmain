@@ -24,7 +24,7 @@ const servicesData = [
       "Fluid therapy & pharmacy support",
       "Ongoing checkups & monitoring"
     ],
-    image: "/service_treatment.png"
+    image: "/realimgs/kutta1.jpeg"
   },
   {
     title: "Surgeries (Major & Minor)",
@@ -35,7 +35,7 @@ const servicesData = [
       "Continuous cardiac & oxygen monitoring",
       "Post-operative care & recovery rooms"
     ],
-    image: "/service_surgery.png"
+    image: "/realimgs/surgeon2.jpeg"
   },
   {
     title: "Sterilisation",
