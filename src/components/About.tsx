@@ -89,7 +89,7 @@ export default function About() {
         {/* Right Column: Overlapping, Staggered Images */}
         <div className="lg:col-span-7 relative flex justify-center items-center py-8">
           <div className="relative w-full max-w-[480px] aspect-[4/5]">
-            {/* Primary/Back Image */}
+            {/* Primary/Back Image: Surgeon 1 */}
             <motion.div
               initial={{ opacity: 0, y: 30, scale: 0.97 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -106,14 +106,14 @@ export default function About() {
                 className="w-full h-full"
               >
                 <img
-                  src="/clinic_interior.png"
-                  alt="Cozy, warm reception lobby of the clinic"
+                  src="/realimgs/surgeon1.jpeg"
+                  alt="Our professional surgeon in the operating theatre"
                   className="w-full h-full object-cover"
                 />
               </motion.div>
             </motion.div>
 
-            {/* Staggered/Overlapping Foreground Image */}
+            {/* Staggered/Overlapping Foreground Image: Award 1 */}
             <motion.div
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -130,8 +130,8 @@ export default function About() {
                 className="w-full h-full"
               >
                 <img
-                  src="/service_wellness.png"
-                  alt="Vet gently checking a healthy dog"
+                  src="/realimgs/award1.jpeg"
+                  alt="Veterinary Excellence Award"
                   className="w-full h-full object-cover"
                 />
               </motion.div>

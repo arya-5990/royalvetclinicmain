@@ -13,7 +13,7 @@ const servicesData = [
       "Lifestyle risk assessments",
       "Immunity checks and health screenings"
     ],
-    image: "/service_vaccine.png"
+    image: "/realimgs/vaccine.png" // New vaccine image
   },
   {
     title: "Treatment",
@@ -46,7 +46,7 @@ const servicesData = [
       "Safe post-op discharge guidance",
       "Stitch removal & checkups included"
     ],
-    image: "/service_sterilise.png"
+    image: "/realimgs/sterlisation.png" // New sterilisation image
   },
   {
     title: "Pathology",
@@ -68,7 +68,7 @@ const servicesData = [
       "Gingival health checks",
       "Home oral hygiene plans"
     ],
-    image: "/service_dental.png"
+    image: "/realimgs/dental scaling.png" // New dental scaling image
   }
 ];
 

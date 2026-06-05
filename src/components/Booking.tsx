@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Dog, Cat, Bird, Rabbit, PawPrint, ArrowRight, Check, MapPin, Clock } from "lucide-react";
+import { Dog, Cat, Bird, Rabbit, PawPrint, ArrowRight, Check, MapPin, Clock, Loader2 } from "lucide-react";
+import { db } from "@/lib/firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function Booking() {
   const [step, setStep] = useState(1);
@@ -12,6 +14,8 @@ export default function Booking() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleBranchSelect = (type: "ganeshganj" | "kesharbagh") => {
     setBranch(type);
@@ -29,10 +33,30 @@ export default function Booking() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim() !== "" && phone.trim() !== "") {
+    const sanitizedPhone = phone.replace(/\D/g, "");
+    if (email.trim() === "" || sanitizedPhone.length !== 10) return;
+
+    setIsLoading(true);
+    setSubmitError(null);
+
+    try {
+      await addDoc(collection(db, "bookings"), {
+        branch,
+        petType,
+        petName: petName.trim(),
+        email: email.trim(),
+        phone: `+91 ${sanitizedPhone}`,
+        status: "pending",
+        createdAt: serverTimestamp(),
+      });
       setIsSubmitted(true);
+    } catch (error) {
+      console.error("Error saving booking:", error);
+      setSubmitError("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -289,14 +313,21 @@ export default function Booking() {
                   <h3 className="font-serif text-xl sm:text-2xl text-charcoal text-center font-medium">
                     Step 5: What is your phone number?
                   </h3>
-                  <div className="relative pt-4">
+                  <div className="relative pt-4 flex items-center">
+                    <span className="text-xl sm:text-2xl font-serif text-charcoal/60 pb-2 border-b border-stone-300 mr-3 select-none">
+                      +91
+                    </span>
                     <input
                       type="tel"
                       required
                       autoFocus
+                      maxLength={10}
                       value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      placeholder="Enter your phone number..."
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/\D/g, "");
+                        setPhone(val);
+                      }}
+                      placeholder="Enter 10-digit number"
                       className="w-full border-b border-stone-300 bg-transparent text-xl sm:text-2xl font-serif text-charcoal outline-none pb-2 focus:border-terracotta focus:border-b-2 transition-all duration-300 placeholder:text-stone-300 placeholder:italic"
                     />
                   </div>
@@ -310,11 +341,11 @@ export default function Booking() {
                     </button>
                     <motion.button
                       type="submit"
-                      disabled={phone.trim() === ""}
-                      whileHover={phone.trim() !== "" ? { scale: 1.02 } : {}}
-                      whileTap={phone.trim() !== "" ? { scale: 0.98 } : {}}
+                      disabled={phone.length !== 10}
+                      whileHover={phone.length === 10 ? { scale: 1.02 } : {}}
+                      whileTap={phone.length === 10 ? { scale: 0.98 } : {}}
                       className={`flex items-center gap-2 px-6 py-3 rounded-full font-sans text-xs font-semibold uppercase tracking-wider transition-all ${
-                        phone.trim() !== ""
+                        phone.length === 10
                           ? "bg-sage text-white shadow-md hover:bg-sage/95 cursor-pointer"
                           : "bg-stone-100 text-stone-300 cursor-not-allowed"
                       }`}
@@ -342,9 +373,8 @@ export default function Booking() {
                 </h3>
                 <div className="font-sans text-stone-500 text-sm sm:text-base leading-relaxed space-y-4">
                   <p>
-                    Thank you for trusting us with your family. A confirmation email has been sent to{" "}
-                    <span className="font-semibold text-charcoal">{email}</span>. We'll also call you at{" "}
-                    <span className="font-semibold text-charcoal">{phone}</span> to coordinate your arrival.
+                    Thank you for trusting us with your family. We will contact you soon at{" "}
+                    <span className="font-semibold text-charcoal">+91 {phone}</span> to coordinate your arrival and confirm your appointment.
                   </p>
                   <div className="p-5 bg-stone-50 rounded-2xl border border-stone-200/40 text-left space-y-2 text-xs sm:text-sm">
                     <p className="font-semibold text-charcoal font-serif">{getBranchDetails().name}</p>
