@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://royalvetindore.com/sitemap.xml",
+    sitemap: "https://www.royalveterinaryclinic.shop/sitemap.xml",
   };
 }

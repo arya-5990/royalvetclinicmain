@@ -6,11 +6,11 @@ export default function StructuredData() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://royalvetindore.com/#organization",
+        "@id": "https://www.royalveterinaryclinic.shop/#organization",
         "name": "Royal Veterinary Clinic",
-        "url": "https://royalvetindore.com",
-        "logo": "https://royalvetindore.com/logo.png",
-        "image": "https://royalvetindore.com/clinic_interior.png",
+        "url": "https://www.royalveterinaryclinic.shop",
+        "logo": "https://www.royalveterinaryclinic.shop/logo.png",
+        "image": "https://www.royalveterinaryclinic.shop/clinic_interior.png",
         "description": "Indore's leading premium pet clinic. Guided by expert vets holding BVSc & MVSc degrees, we offer gentle vaccination, sterilisation surgeries, pathology, & dental scaling.",
         "sameAs": [],
         "contactPoint": {
@@ -22,13 +22,13 @@ export default function StructuredData() {
       },
       {
         "@type": "VeterinaryCare",
-        "@id": "https://royalvetindore.com/#branch-ganeshganj",
+        "@id": "https://www.royalveterinaryclinic.shop/#branch-ganeshganj",
         "name": "Royal Veterinary Clinic - Ganeshganj Branch",
         "description": "Premium, compassionate veterinary clinic in Indore near Rajmohalla. Warm, calming, and expertly tailored care.",
-        "image": "https://royalvetindore.com/clinic_interior.png",
+        "image": "https://www.royalveterinaryclinic.shop/clinic_interior.png",
         "telephone": "+91-87707-93826",
-        "email": "contact@royalvetindore.com",
-        "url": "https://royalvetindore.com/contact",
+        "email": "contact@royalveterinaryclinic.shop",
+        "url": "https://www.royalveterinaryclinic.shop/contact",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "55 Ganeshganj (near Antim Square, Rajmohalla)",
@@ -60,13 +60,13 @@ export default function StructuredData() {
       },
       {
         "@type": "VeterinaryCare",
-        "@id": "https://royalvetindore.com/#branch-kesharbagh",
+        "@id": "https://www.royalveterinaryclinic.shop/#branch-kesharbagh",
         "name": "Royal Veterinary Clinic - Kesharbagh Road Branch",
         "description": "Premium, compassionate veterinary clinic in Indore on Kesharbagh Road. Warm, calming, and expertly tailored care.",
-        "image": "https://royalvetindore.com/service_wellness.png",
+        "image": "https://www.royalveterinaryclinic.shop/service_wellness.png",
         "telephone": "+91-87707-93826",
-        "email": "contact@royalvetindore.com",
-        "url": "https://royalvetindore.com/contact",
+        "email": "contact@royalveterinaryclinic.shop",
+        "url": "https://www.royalveterinaryclinic.shop/contact",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "G-42 A, in front of Palash Parisar, Kesharbagh Road",

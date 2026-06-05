@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://royalvetindore.com";
+  const baseUrl = "https://www.royalveterinaryclinic.shop";
   const currentDate = new Date();
 
   const routes = [

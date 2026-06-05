@@ -11,7 +11,7 @@ export default function Contact() {
       timing: "Monday to Saturday: 10 AM to 9 PM",
       doctorTiming: "10 AM - 2 PM, 6 PM - 9 PM",
       phone: "+91 87707 93826",
-      email: "contact@royalvetindore.com",
+      email: "contact@royalveterinaryclinic.shop",
       mapUrl: "https://maps.google.com/maps?q=22.7186253,75.8409981&z=16&output=embed"
     },
     {
@@ -20,7 +20,7 @@ export default function Contact() {
       timing: "Monday to Sunday: 10 AM to 9 PM",
       doctorTiming: "2 PM - 5 PM",
       phone: "+91 87707 93826",
-      email: "contact@royalvetindore.com",
+      email: "contact@royalveterinaryclinic.shop",
       mapUrl: "https://maps.google.com/maps?q=22.6788412,75.8418031&z=16&output=embed"
     }
   ];

@@ -19,7 +19,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://royalvetindore.com"),
+  metadataBase: new URL("https://www.royalveterinaryclinic.shop"),
   title: {
     default: "Royal Veterinary Clinic | Premium Pet Care & Surgery in Indore",
     template: "%s | Royal Veterinary Clinic Indore",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Royal Veterinary Clinic | Premium Pet Care & Surgery in Indore",
     description: "Indore's leading premium pet clinic. Led by expert vets with BVSc & MVSc credentials, we offer stress-free vaccination, surgery, dental scaling, and pathology diagnostics.",
-    url: "https://royalvetindore.com",
+    url: "https://www.royalveterinaryclinic.shop",
     siteName: "Royal Veterinary Clinic",
     images: [
       {
