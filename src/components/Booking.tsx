@@ -38,6 +38,17 @@ export default function Booking() {
     const sanitizedPhone = phone.replace(/\D/g, "");
     if (email.trim() === "" || sanitizedPhone.length !== 10) return;
 
+    // Rate limiting: 1 booking every 30 seconds per device
+    const lastBooking = localStorage.getItem("lastBookingTimestamp");
+    if (lastBooking) {
+      const diff = Date.now() - parseInt(lastBooking, 10);
+      if (diff < 30000) {
+        const secondsLeft = Math.ceil((30000 - diff) / 1000);
+        setSubmitError(`Please wait ${secondsLeft} seconds before making another booking.`);
+        return;
+      }
+    }
+
     setIsLoading(true);
     setSubmitError(null);
 
@@ -51,6 +62,7 @@ export default function Booking() {
         status: "pending",
         createdAt: serverTimestamp(),
       });
+      localStorage.setItem("lastBookingTimestamp", Date.now().toString());
       setIsSubmitted(true);
     } catch (error) {
       console.error("Error saving booking:", error);
@@ -234,6 +246,12 @@ export default function Booking() {
                       required
                       value={petName}
                       onChange={(e) => setPetName(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          handleNextStep();
+                        }
+                      }}
                       placeholder="Type their name here..."
                       className="w-full border-b border-stone-300 bg-transparent text-xl sm:text-2xl font-serif text-charcoal outline-none pb-2 focus:border-terracotta focus:border-b-2 transition-all duration-300 placeholder:text-stone-300 placeholder:italic"
                     />
@@ -277,6 +295,14 @@ export default function Booking() {
                       autoFocus
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          if (email.trim() !== "") {
+                            setStep(5);
+                          }
+                        }
+                      }}
                       placeholder="Enter your email address..."
                       className="w-full border-b border-stone-300 bg-transparent text-xl sm:text-2xl font-serif text-charcoal outline-none pb-2 focus:border-terracotta focus:border-b-2 transition-all duration-300 placeholder:text-stone-300 placeholder:italic"
                     />
@@ -331,26 +357,44 @@ export default function Booking() {
                       className="w-full border-b border-stone-300 bg-transparent text-xl sm:text-2xl font-serif text-charcoal outline-none pb-2 focus:border-terracotta focus:border-b-2 transition-all duration-300 placeholder:text-stone-300 placeholder:italic"
                     />
                   </div>
+                  {submitError && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-red-500 font-sans text-xs text-center"
+                    >
+                      {submitError}
+                    </motion.p>
+                  )}
                   <div className="flex justify-between items-center pt-4">
                     <button
                       type="button"
+                      disabled={isLoading}
                       onClick={() => setStep(4)}
-                      className="font-sans text-xs font-semibold uppercase tracking-wider text-stone-400 hover:text-charcoal transition-colors"
+                      className="font-sans text-xs font-semibold uppercase tracking-wider text-stone-400 hover:text-charcoal transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                     >
                       Back
                     </button>
                     <motion.button
                       type="submit"
-                      disabled={phone.length !== 10}
-                      whileHover={phone.length === 10 ? { scale: 1.02 } : {}}
-                      whileTap={phone.length === 10 ? { scale: 0.98 } : {}}
+                      disabled={phone.length !== 10 || isLoading}
+                      whileHover={phone.length === 10 && !isLoading ? { scale: 1.02 } : {}}
+                      whileTap={phone.length === 10 && !isLoading ? { scale: 0.98 } : {}}
                       className={`flex items-center gap-2 px-6 py-3 rounded-full font-sans text-xs font-semibold uppercase tracking-wider transition-all ${
-                        phone.length === 10
+                        phone.length === 10 && !isLoading
                           ? "bg-sage text-white shadow-md hover:bg-sage/95 cursor-pointer"
                           : "bg-stone-100 text-stone-300 cursor-not-allowed"
                       }`}
                     >
-                      Book Visit <Check className="w-3.5 h-3.5" />
+                      {isLoading ? (
+                        <>
+                          Booking... <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                        </>
+                      ) : (
+                        <>
+                          Book Visit <Check className="w-3.5 h-3.5" />
+                        </>
+                      )}
                     </motion.button>
                   </div>
                 </div>

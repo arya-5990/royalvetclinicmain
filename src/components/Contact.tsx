@@ -127,7 +127,7 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                className="w-full h-full lg:grayscale lg:opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
               />
             </div>
           </motion.div>
