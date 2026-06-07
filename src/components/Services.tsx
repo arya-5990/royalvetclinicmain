@@ -95,11 +95,22 @@ function ServiceItem({
     margin: "-20% 0px -20% 0px",
   });
 
+  const [isDesktop, setIsDesktop] = useState(false);
+
   useEffect(() => {
-    if (isInView) {
+    // Only run window checks on client side
+    const media = window.matchMedia("(min-width: 1024px)");
+    setIsDesktop(media.matches);
+    const listener = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, []);
+
+  useEffect(() => {
+    if (isInView && isDesktop) {
       setActiveIndex(index);
     }
-  }, [isInView, index, setActiveIndex]);
+  }, [isInView, index, setActiveIndex, isDesktop]);
 
   return (
     <div
@@ -108,8 +119,8 @@ function ServiceItem({
     >
       <motion.div
         animate={{ 
-          opacity: isInView ? 1 : 0.4,
-          y: isInView ? 0 : 15 
+          opacity: (!isDesktop || isInView) ? 1 : 0.4,
+          y: (!isDesktop || isInView) ? 0 : 15 
         }}
         transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
         className="space-y-6"

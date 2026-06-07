@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section id="about" className="relative py-32 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
       {/* Background Dotted Path representing dog's walk */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-40 hidden lg:block">
         <svg
           width="100%"
           height="100%"

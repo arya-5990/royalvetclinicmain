@@ -51,12 +51,10 @@ export default function Hero() {
             {/* Playful Detail: 2D Vector Cat Resting on the Arch Curve */}
             <div className="absolute top-[8%] left-[16%] z-20 pointer-events-none transform -translate-y-1/2 -rotate-[8deg]">
               <svg
-                width="120"
-                height="80"
                 viewBox="0 0 120 80"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="overflow-visible"
+                className="w-20 h-[53px] sm:w-24 sm:h-16 lg:w-[120px] lg:h-[80px] overflow-visible"
               >
                 {/* Cat Tail - Animated group */}
                 <motion.g
