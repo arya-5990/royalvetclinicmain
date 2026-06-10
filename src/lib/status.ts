@@ -1,1 +1,1 @@
-export const IS_BLOCKED = true;
+export const IS_BLOCKED = false;
