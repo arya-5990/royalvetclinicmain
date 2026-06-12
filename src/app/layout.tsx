@@ -22,11 +22,14 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.royalveterinaryclinic.shop"),
   title: {
-    default: "Royal Veterinary Clinic | Premium Pet Care & Surgery in Indore",
+    default: "Royal Veterinary Clinic | Best Vet Clinic in Indore",
     template: "%s | Royal Veterinary Clinic Indore",
   },
   description: "Royal Veterinary Clinic is Indore's leading premium pet clinic. Led by expert vets with BVSc & MVSc credentials, we offer stress-free vaccination, surgery, dental scaling, and pathology diagnostics at Ganeshganj & Kesharbagh branches.",
   keywords: [
+    "vet clinic Indore",
+    "best vet clinic in Indore",
+    "veterinary clinic in Indore",
     "veterinary clinic Indore",
     "best vet in Indore",
     "Royal Veterinary Clinic Indore",
@@ -53,7 +56,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Royal Veterinary Clinic | Premium Pet Care & Surgery in Indore",
+    title: "Royal Veterinary Clinic | Best Vet Clinic in Indore",
     description: "Indore's leading premium pet clinic. Led by expert vets with BVSc & MVSc credentials, we offer stress-free vaccination, surgery, dental scaling, and pathology diagnostics.",
     url: "https://www.royalveterinaryclinic.shop",
     siteName: "Royal Veterinary Clinic",
@@ -70,7 +73,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Royal Veterinary Clinic | Premium Pet Care & Surgery in Indore",
+    title: "Royal Veterinary Clinic | Best Vet Clinic in Indore",
     description: "Indore's leading premium pet clinic. Led by expert vets with BVSc & MVSc credentials.",
     images: ["/clinic_interior.png"],
   },

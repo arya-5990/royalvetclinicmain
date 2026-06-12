@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart, MapPin, Clock, Stethoscope } from "lucide-react";
+import { Heart, MapPin, Clock, Stethoscope, Phone } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -80,6 +80,17 @@ export default function Footer() {
                   Doctor: 10 AM - 2 PM, 6 PM - 9 PM
                 </p>
               </div>
+              <div className="flex gap-3 items-start text-stone-500">
+                <div className="w-6 h-6 rounded-full bg-stone-200/30 border border-stone-200/50 flex items-center justify-center text-terracotta shrink-0 mt-0.5">
+                  <Phone className="w-3.5 h-3.5" />
+                </div>
+                <a 
+                  href="tel:+918770793826" 
+                  className="leading-relaxed hover:text-terracotta transition-colors duration-200 font-medium"
+                >
+                  +91 87707 93826
+                </a>
+              </div>
             </div>
           </div>
 
@@ -110,6 +121,17 @@ export default function Footer() {
                 <p className="leading-relaxed text-sage font-semibold">
                   Doctor: 2 PM - 5 PM
                 </p>
+              </div>
+              <div className="flex gap-3 items-start text-stone-500">
+                <div className="w-6 h-6 rounded-full bg-stone-200/30 border border-stone-200/50 flex items-center justify-center text-terracotta shrink-0 mt-0.5">
+                  <Phone className="w-3.5 h-3.5" />
+                </div>
+                <a 
+                  href="tel:+918770793826" 
+                  className="leading-relaxed hover:text-terracotta transition-colors duration-200 font-medium"
+                >
+                  +91 87707 93826
+                </a>
               </div>
             </div>
           </div>

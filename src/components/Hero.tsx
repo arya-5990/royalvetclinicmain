@@ -13,6 +13,9 @@ export default function Hero() {
           transition={{ type: "spring", stiffness: 45, damping: 14, delay: 0.1 }}
           className="lg:col-span-5 flex flex-col justify-center text-left z-10"
         >
+          <span className="font-sans text-xs uppercase tracking-widest text-sage font-semibold mb-3 block">
+            Premium Vet Clinic in Indore
+          </span>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-charcoal font-semibold leading-[1.12] mb-6">
             Compassionate care for your best friend.
           </h1>

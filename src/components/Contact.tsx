@@ -34,7 +34,7 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           className="font-sans text-xs uppercase tracking-widest text-sage font-semibold block"
         >
-          Get in Touch
+          Ganeshganj & Kesharbagh Branches
         </motion.span>
         <motion.h1
           initial={{ opacity: 0, y: 15 }}
@@ -42,7 +42,7 @@ export default function Contact() {
           transition={{ delay: 0.1 }}
           className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal font-semibold"
         >
-          We are here for you.
+          Our Vet Clinics in Indore
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 15 }}

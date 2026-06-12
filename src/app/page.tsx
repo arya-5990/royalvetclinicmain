@@ -5,7 +5,7 @@ import TestimonialsTeaser from "@/components/TestimonialsTeaser";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Royal Veterinary Clinic | Premium Pet Care & Vet in Indore",
+  title: "Royal Veterinary Clinic | Best Vet Clinic in Indore",
   description: "Indore's leading premium pet clinic. Guided by expert vets holding BVSc & MVSc degrees, we offer gentle vaccination, sterilisation surgeries, pathology, and dental scaling.",
   alternates: {
     canonical: "/",

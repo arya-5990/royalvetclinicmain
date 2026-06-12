@@ -164,7 +164,7 @@ export default function Services() {
           Our Offerings
         </span>
         <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal font-semibold mt-4">
-          Tailored medical craftsmanship.
+          Veterinary services in Indore, tailored with care.
         </h2>
       </div>
 

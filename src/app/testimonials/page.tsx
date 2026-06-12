@@ -2,7 +2,7 @@ import Testimonials from "@/components/Testimonials";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Testimonials & Patient Stories",
+  title: "Reviews & Testimonials | Royal Vet Clinic Indore",
   description: "Read authentic reviews from pet parents in Indore. See why families trust Dr. Abhay Patel and the Royal Veterinary Clinic with their beloved companions.",
   alternates: {
     canonical: "/testimonials",

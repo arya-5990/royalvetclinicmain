@@ -2,7 +2,7 @@ import Services from "@/components/Services";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Veterinary Services | Surgery, Vaccination & Diagnostics",
+  title: "Veterinary Services in Indore | Royal Vet Clinic",
   description: "Discover our comprehensive veterinary capabilities in Indore. From soft-tissue surgery & vaccinations to lab diagnostics (pathology) & dental scaling.",
   alternates: {
     canonical: "/services",

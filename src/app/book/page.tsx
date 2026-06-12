@@ -2,7 +2,7 @@ import Booking from "@/components/Booking";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Book an Appointment Online",
+  title: "Book Vet Appointment Online | Royal Vet Clinic Indore",
   description: "Schedule a premium, low-stress veterinary consultation for your dog or cat in under two minutes using our online appointment wizard.",
   alternates: {
     canonical: "/book",

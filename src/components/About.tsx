@@ -73,7 +73,7 @@ export default function About() {
             className="space-y-6 text-stone-600 font-sans text-sm sm:text-base leading-relaxed"
           >
             <p>
-              Led by expert clinicians holding BVSc & MVSc (Bachelor of Veterinary Science & Master of Veterinary Science) credentials, we combine academic precision with a gentle, slow-paced approach. Our space is designed to calm, quiet, and soothe, stripping away the sterile environment of traditional clinics.
+              Led by expert clinicians holding BVSc & MVSc (Bachelor of Veterinary Science & Master of Veterinary Science) credentials, our premier vet clinic in Indore combines academic precision with a gentle, slow-paced approach. Our space is designed to calm, quiet, and soothe, stripping away the sterile environment of traditional clinics.
             </p>
             <p>
               By combining state-of-the-art medicine with a deeply warm, slow-paced environment, 
