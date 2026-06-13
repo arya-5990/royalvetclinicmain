@@ -157,6 +157,108 @@ export default function Home() {
         {/* Subtle separator */}
         <div className="w-[85%] max-w-7xl mx-auto h-[1px] bg-stone-200/40" />
 
+        {/* Conditions We Treat Section */}
+        <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+          <div className="text-center mb-16 space-y-4">
+            <span className="font-sans text-xs uppercase tracking-widest text-sage font-semibold">
+              Clinical Expertise
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-semibold">
+              Conditions we diagnose & treat.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                num: "01",
+                name: "Vomiting & Diarrhea",
+                desc: "Rapid fluid therapy, precise diagnostics, and targeted gastroenteritis treatments to restore digestive health.",
+              },
+              {
+                num: "02",
+                name: "Tick Infestation",
+                desc: "Comprehensive external parasite removal, dermatological soothing, and long-term preventative control.",
+              },
+              {
+                num: "03",
+                name: "Parvovirus Care",
+                desc: "Dedicated isolation treatment protocols, aggressive hydration, and vital immune support to combat viral enteritis.",
+              },
+              {
+                num: "04",
+                name: "Canine Distemper",
+                desc: "Compassionate, high-level supportive care alongside respiratory, gastrointestinal, and neurological symptom management.",
+              },
+              {
+                num: "05",
+                name: "Leptospirosis",
+                desc: "Targeted antibiotic regimens, hydration therapies, and organ monitoring for zoonotic bacterial infections.",
+              },
+              {
+                num: "06",
+                name: "Skin Infections",
+                desc: "Advanced dermatological diagnostic tests for bacterial dermatitis, fungal hot spots, and allergic reactions.",
+              },
+              {
+                num: "07",
+                name: "Dental Disorders",
+                desc: "Professional ultrasonic scaling, teeth polishing, surgical extractions, and comprehensive oral hygiene plans.",
+              },
+              {
+                num: "08",
+                name: "Tick Fever",
+                desc: "Hematology screenings, supportive therapy, and specialized medications to eliminate blood-borne tick parasites.",
+              },
+              {
+                num: "09",
+                name: "Kidney Disorders",
+                desc: "Fluid management, specialized therapeutic diets, and proactive care for acute and chronic renal disease.",
+              },
+              {
+                num: "10",
+                name: "Liver Disorders",
+                desc: "Specialized liver function panels, hepatoprotective therapies, and diet planning for biliary health.",
+              },
+              {
+                num: "11",
+                name: "Eye Diseases",
+                desc: "Diagnostics and therapies for corneal ulcers, conjunctivitis, cataract screening, and ocular injuries.",
+              },
+              {
+                num: "12",
+                name: "Emergency Trauma",
+                desc: "Triage, immediate stabilization, oxygen therapy, and critical care management for emergency cases.",
+              },
+            ].map((disease, idx) => (
+              <div
+                key={idx}
+                className="group relative bg-white border border-stone-200/40 p-6 rounded-[28px] shadow-[0_10px_30px_rgba(43,41,39,0.01)] hover:shadow-[0_20px_45px_rgba(43,41,39,0.04)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+              >
+                {/* Visual Top Border Line Accent that expands on hover */}
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-stone-100 group-hover:bg-terracotta transition-colors duration-300" />
+                
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-sans text-[10px] font-bold text-sage uppercase tracking-wider">
+                      Condition {disease.num}
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-lg sm:text-xl text-charcoal font-semibold group-hover:text-terracotta transition-colors duration-300">
+                    {disease.name}
+                  </h3>
+                  <p className="font-sans text-stone-500 text-xs sm:text-sm leading-relaxed">
+                    {disease.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Subtle separator */}
+        <div className="w-[85%] max-w-7xl mx-auto h-[1px] bg-stone-200/40" />
+
         {/* Testimonials Section */}
         <TestimonialsTeaser />
 
