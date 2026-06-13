@@ -81,34 +81,63 @@ export default function Home() {
             {[
               {
                 num: "01",
+                tag: "Preventative Care",
                 title: "Vaccination & Treatment",
                 desc: "Thorough immunization schedules and customized medical therapies designed to heal, nurture, and protect your dog or cat.",
+                image: "/service_treatment.png",
               },
               {
                 num: "02",
+                tag: "Surgical Excellence",
                 title: "Surgeries & Sterilisation",
                 desc: "Major and minor soft-tissue procedures alongside routine sterilisation, conducted in sterile, state-of-the-art operating suites.",
+                image: "/service_surgery.png",
               },
               {
                 num: "03",
+                tag: "Diagnostics & Dental",
                 title: "Pathology & Dental Scaling",
                 desc: "In-house lab diagnostics (blood/urinalysis) and ultrasonic dental cleaning to prevent periodontal issues and secure overall health.",
+                image: "/service_pathology.png",
               },
             ].map((srv, idx) => (
-              <div
+              <Link
                 key={idx}
-                className="bg-white border border-stone-200/40 p-8 rounded-[32px] space-y-4 shadow-[0_10px_25px_rgba(43,41,39,0.02)]"
+                href="/services"
+                className="group bg-white border border-stone-200/40 p-6 rounded-[36px] flex flex-col shadow-[0_15px_40px_rgba(43,41,39,0.02)] hover:shadow-[0_25px_50px_rgba(43,41,39,0.06)] hover:-translate-y-1 transition-all duration-500 ease-out"
               >
-                <span className="font-serif text-terracotta text-lg font-semibold block">
-                  {srv.num}
-                </span>
-                <h3 className="font-serif text-xl text-charcoal font-semibold">
-                  {srv.title}
-                </h3>
-                <p className="font-sans text-stone-500 text-sm leading-relaxed">
-                  {srv.desc}
-                </p>
-              </div>
+                <div className="relative w-full aspect-[16/11] rounded-[24px] overflow-hidden mb-6 bg-stone-100 border border-stone-200/10">
+                  <img
+                    src={srv.image}
+                    alt={srv.title}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+                <div className="flex-grow flex flex-col space-y-3 px-1">
+                  <div className="flex items-center gap-2">
+                    <span className="font-serif text-terracotta text-sm font-semibold">
+                      {srv.num}
+                    </span>
+                    <span className="w-1 h-1 rounded-full bg-stone-300" />
+                    <span className="font-sans text-[10px] uppercase tracking-wider text-sage font-bold">
+                      {srv.tag}
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-xl sm:text-2xl text-charcoal font-semibold group-hover:text-terracotta transition-colors duration-300">
+                    {srv.title}
+                  </h3>
+                  <p className="font-sans text-stone-500 text-sm leading-relaxed flex-grow">
+                    {srv.desc}
+                  </p>
+                </div>
+                <div className="pt-4 mt-5 border-t border-stone-100/80 flex items-center justify-between px-1">
+                  <span className="font-sans text-xs font-semibold uppercase tracking-wider text-charcoal group-hover:text-terracotta transition-colors duration-300">
+                    Learn More
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-stone-400 transition-all duration-300 group-hover:translate-x-1 group-hover:text-terracotta" />
+                </div>
+              </Link>
             ))}
           </div>
 
