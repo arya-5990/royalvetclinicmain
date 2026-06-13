@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import DoctorAbhay from "@/components/DoctorAbhay";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,7 +16,9 @@ export default function AboutPage() {
       {/* Main page content with spacing for the navbar */}
       <div className="pt-24 md:pt-28">
         <About />
+        <DoctorAbhay />
       </div>
     </div>
   );
 }
+
