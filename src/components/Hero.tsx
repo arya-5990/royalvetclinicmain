@@ -123,8 +123,8 @@ export default function Hero() {
                 className="w-full h-full"
               >
                 <img
-                  src="/hero_dog.png"
-                  alt="Beautiful dog in a premium lifestyle setting"
+                  src="/dr Abhay.jpeg"
+                  alt="Dr. Abhay Patel - Chief Veterinary Surgeon"
                   className="w-full h-full object-cover"
                 />
               </motion.div>
