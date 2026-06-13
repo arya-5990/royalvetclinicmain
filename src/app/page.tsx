@@ -150,6 +150,70 @@ export default function Home() {
             </Link>
           </div>
         </section>
+        {/* Who We Treat Section */}
+        <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+          <div className="text-center mb-16 space-y-4">
+            <span className="font-sans text-xs uppercase tracking-widest text-sage font-semibold">
+              Our Patients
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-semibold">
+              Compassionate care for every companion.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Dogs",
+                tag: "Canine Care",
+                desc: "From playful puppies to wise seniors, we offer tailored vaccinations, diagnostics, and precise surgical care designed for dogs of all sizes.",
+                image: "/dog_patient.png",
+              },
+              {
+                name: "Cats",
+                tag: "Feline Care",
+                desc: "We understand that cats require a gentle touch. Our clinic offers a calm, low-stress environment with feline-specific treatments.",
+                image: "/cat_patient.png",
+              },
+              {
+                name: "Exotic Pets",
+                tag: "Specialized Care",
+                desc: "Expert medical and surgical attention for rabbits, birds, hamsters, and reptiles. We ensure your unique companions receive specialized care.",
+                image: "/exotic_patient.png",
+              },
+            ].map((pet, idx) => (
+              <div
+                key={idx}
+                className="group relative overflow-hidden rounded-[36px] bg-white border border-stone-200/40 shadow-[0_15px_40px_rgba(43,41,39,0.02)] hover:shadow-[0_25px_50px_rgba(43,41,39,0.05)] hover:-translate-y-1 transition-all duration-500 ease-out flex flex-col"
+              >
+                {/* Image Container */}
+                <div className="relative w-full aspect-[4/3] overflow-hidden bg-stone-100 border-b border-stone-100">
+                  <img
+                    src={pet.image}
+                    alt={pet.name}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+
+                {/* Content Container */}
+                <div className="p-6 flex-grow flex flex-col space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="font-sans text-[10px] uppercase tracking-wider text-sage font-bold">
+                      {pet.tag}
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-xl sm:text-2xl text-charcoal font-semibold group-hover:text-terracotta transition-colors duration-300">
+                    {pet.name}
+                  </h3>
+                  <p className="font-sans text-stone-500 text-sm leading-relaxed flex-grow">
+                    {pet.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* Subtle separator */}
         <div className="w-[85%] max-w-7xl mx-auto h-[1px] bg-stone-200/40" />
