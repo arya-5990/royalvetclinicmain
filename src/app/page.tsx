@@ -31,7 +31,7 @@ export default function Home() {
             <div className="lg:col-span-6 relative flex justify-center items-center">
               <div className="relative w-full max-w-[450px] aspect-[4/3] rounded-[40px] overflow-hidden border border-stone-200/20 bg-stone-100 shadow-[0_15px_35px_rgba(43,41,39,0.03)]">
                 <img
-                  src="/clinic_interior.png"
+                  src="/clinic111.jpeg"
                   alt="Cozy veterinary clinic reception lobby"
                   className="w-full h-full object-cover"
                 />
