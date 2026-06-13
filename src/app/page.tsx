@@ -84,14 +84,14 @@ export default function Home() {
                 tag: "Preventative Care",
                 title: "Vaccination & Treatment",
                 desc: "Thorough immunization schedules and customized medical therapies designed to heal, nurture, and protect your dog or cat.",
-                image: "/service_treatment.png",
+                image: "/realimgs/vaccine.png",
               },
               {
                 num: "02",
                 tag: "Surgical Excellence",
                 title: "Surgeries & Sterilisation",
                 desc: "Major and minor soft-tissue procedures alongside routine sterilisation, conducted in sterile, state-of-the-art operating suites.",
-                image: "/service_surgery.png",
+                image: "/realimgs/surgeon3.jpeg",
               },
               {
                 num: "03",
